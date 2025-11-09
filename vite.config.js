@@ -1,17 +1,12 @@
 import { defineConfig } from 'vite'
+// Si usas React, descomenta:
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: '/EcoMarket/',
+  base: './',  // ¡IMPORTANTE para GitHub Pages y Netlify!
+  plugins: [react()],  // Descomenta si usas React
   build: {
     outDir: 'dist',
-    sourcemap: false
-  },
-  server: {
-    // Para desarrollo local
-    host: true,
-    port: 3000
+    emptyOutDir: true
   }
 })
