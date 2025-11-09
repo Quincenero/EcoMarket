@@ -53,7 +53,7 @@ const Carrito = () => {
             {usuario ? (
               <button 
                 className="btn btn-success"
-                onClick={() => navigate('/checkout')} // ← Ahora navigate está definido
+                onClick={() => navigate('/checkout')} 
               >
                 ✅ Finalizar compra
               </button>

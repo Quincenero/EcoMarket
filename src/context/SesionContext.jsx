@@ -10,7 +10,7 @@ export const SesionProvider = ({ children }) => {
   const administradores = [
     'admin@ecomarket.com',
     'supervisor@ecomarket.com',
-    'maria@ecomarket.com'
+    'marco@ecomarket.com'
   ];
 
   useEffect(() => {

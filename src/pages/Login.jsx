@@ -66,8 +66,8 @@ const Login = () => {
   const cuentasDemo = [
     { email: 'admin@ecomarket.com', contraseña: 'admin123', tipo: 'Administrador' },
     { email: 'supervisor@ecomarket.com', contraseña: 'super123', tipo: 'Supervisor' },
-    { email: 'maria@ecomarket.com', contraseña: 'maria123', tipo: 'Administradora' },
-    { email: 'usuario@ejemplo.com', contraseña: 'user123', tipo: 'Usuario Normal' }
+    { email: 'marco@ecomarket.com', contraseña: 'marco123', tipo: 'Administradora' },
+    { email: 'marco@correo.com', contraseña: 'user123', tipo: 'Usuario Normal' }
   ];
 
   const llenarDemo = (cuenta) => {
@@ -183,7 +183,7 @@ const Login = () => {
 
               <div className="text-center mt-4">
                 <p className="text-muted mb-0">
-                  ¿No tienes cuenta?{' '}
+                  ¿No tenes cuenta?{' '}
                   <a 
                     href="/registro" 
                     className="text-success text-decoration-none fw-semibold"
