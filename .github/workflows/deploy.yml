@@ -33,8 +33,11 @@ jobs:
     - name: Add node_modules/.bin to PATH
       run: echo "$(npm bin)" >> $GITHUB_PATH
 
+    - name: Reinstall vite with executable permissions
+      run: npm install vite --save-dev --force
+      
     - name: Build project
-      run: ./node_modules/.bin/vite build
+      run: node node_modules/vite/bin/vite.js build
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
