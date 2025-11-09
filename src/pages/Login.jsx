@@ -27,7 +27,7 @@ const Login = () => {
         { email: 'admin@ecomarket.com', contraseña: 'admin123', nombre: 'Administrador' },
         { email: 'supervisor@ecomarket.com', contraseña: 'super123', nombre: 'Supervisor' },
         { email: 'maria@ecomarket.com', contraseña: 'maria123', nombre: 'María' },
-        { email: 'usuario@ejemplo.com', contraseña: 'user123', nombre: 'Usuario Demo' }
+        { email: 'marco@correo.com', contraseña: 'user123', nombre: 'Usuario Demo' }
       ];
 
       const usuarioEncontrado = credencialesValidas.find(
