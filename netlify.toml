@@ -2,18 +2,10 @@
   publish = "dist"
   command = "npm run build"
 
+[build.environment]
+  NODE_VERSION = "20"  # ← Recomendado para versiones recientes
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Para manejar assets (CSS, JS)
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Content-Type = "text/css"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Content-Type = "application/javascript"

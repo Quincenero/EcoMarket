@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'; // ← Usa BrowserRouter directamente
 import App from './App';
 import { CarritoProvider } from './context/CarritoContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,12 +9,12 @@ import { SesionProvider } from './context/SesionContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router basename="/EcoMarket">
+    <BrowserRouter>  {/* ← Cambia a BrowserRouter SIN basename */}
       <SesionProvider>
         <CarritoProvider>
           <App />
         </CarritoProvider>
       </SesionProvider>
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );

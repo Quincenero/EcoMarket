@@ -1,12 +1,17 @@
-
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: './',  // ← Esto es ESENCIAL
+  base: './',  // ← CLAVE para Netlify
+  plugins: [react()],
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',  // Organiza CSS, JS, imágenes
-    emptyOutDir: true
+    emptyOutDir: true,
+    // Opcional: optimizaciones para versiones recientes
+    minify: 'esbuild',
+    target: 'esnext'
   },
-  publicDir: 'public'
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
+  }
 })
