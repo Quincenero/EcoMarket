@@ -20,19 +20,12 @@ const Navbar = () => {
         {/* Brand EcoMarket */}
         <Link className="navbar-brand fw-bold d-flex align-items-center" to="/">
           <div className="position-relative me-3">
-            {/* Círculo exterior */}
             <div className="bg-white rounded-circle d-flex align-items-center justify-content-center shadow" 
                 style={{width: '50px', height: '50px'}}>
-              
-              {/* Círculo interior verde */}
               <div className="bg-success rounded-circle d-flex align-items-center justify-content-center" 
                   style={{width: '40px', height: '40px'}}>
-                
-                {/* Icono principal */}
                 <div className="position-relative text-white">
                   <span style={{fontSize: '18px', filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))'}}>🌿</span>
-                  
-                  {/* Punto decorativo */}
                   <div className="position-absolute top-0 end-0 translate-middle">
                     <div className="bg-warning rounded-circle" 
                         style={{width: '6px', height: '6px'}}></div>
@@ -42,7 +35,6 @@ const Navbar = () => {
             </div>
           </div>
           
-          {/* Texto del logo */}
           <div>
             <span className="fw-bold fs-3 text-white" style={{
               letterSpacing: '-0.5px',
@@ -61,11 +53,21 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        {/* Botón hamburguesa - ID corregido */}
+        <button 
+          className="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="menu">
+        {/* Contenido colapsable - ID corregido */}
+        <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
@@ -112,7 +114,6 @@ const Navbar = () => {
                   </span>
                 </li>
                 
-                {/* Enlace al panel admin si es administrador */}
                 {usuario.esAdmin && (
                   <li className="nav-item">
                     <NavLink className="nav-link" to="/admin/productos">
