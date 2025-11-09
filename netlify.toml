@@ -7,6 +7,13 @@
   to = "/index.html"
   status = 200
 
-# Opcional: Configuración para branches
-[context.production.environment]
-  NODE_ENV = "production"
+# Para manejar assets (CSS, JS)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
