@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';

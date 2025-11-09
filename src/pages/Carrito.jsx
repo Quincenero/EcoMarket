@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
 import { Link, useNavigate } from 'react-router-dom'; // ← Agregar useNavigate aquí

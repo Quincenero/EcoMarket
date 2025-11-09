@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext, useState } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
 import { SesionContext } from '../context/SesionContext';

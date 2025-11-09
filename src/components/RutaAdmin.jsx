@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from 'react';
 import { SesionContext } from '../context/SesionContext';
 import { Navigate } from 'react-router-dom';
