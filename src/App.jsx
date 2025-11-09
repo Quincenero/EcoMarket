@@ -17,7 +17,7 @@ import CompraExitosa from './pages/CompraExitosa';
 
 function App() {
   return (
-    <BrowserRouter basename='/EcoMarket'>
+    <BrowserRouter basename="/EcoMarket">
       <div className="d-flex flex-column min-vh-100">
         <Navbar />
         <main className="flex-grow-1">
