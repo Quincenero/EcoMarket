@@ -42,7 +42,7 @@ const Footer = () => {
             <div className="d-flex justify-content-lg-end align-items-center">
               <div className="me-3">
                 <p className="text-white-50 small mb-0">
-                  &copy; {currentYear} EcoMarket
+                  &copy; {currentYear} EcoMarket. Todos los derechos reservados
                 </p>
               </div>
               <div className="social-links">

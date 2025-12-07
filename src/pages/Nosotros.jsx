@@ -4,7 +4,7 @@ const Nosotros = () => {
   return (
     <div className="bg-light">
       {/* Hero Section */}
-      <div className="bg-success text-white py-5">
+      <div className="bg-light text-dark py-5">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
