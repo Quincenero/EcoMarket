@@ -1,12 +1,14 @@
-import React from 'react';
-import { useContext } from 'react';
-import { SesionContext } from '../context/SesionContext';
 import { Navigate } from 'react-router-dom';
+import { useSesion } from '../context/useSesion';
 
 const RutaProtegida = ({ children }) => {
-  const { usuario } = useContext(SesionContext);
+  const { usuario, loading } = useSesion();
 
-  return usuario ? children : <Navigate to="/login" />;
+  if (loading) {
+    return <div className="text-center py-5">Cargando sesión...</div>;
+  }
+
+  return usuario ? children : <Navigate to="/login" replace />;
 };
 
 export default RutaProtegida;

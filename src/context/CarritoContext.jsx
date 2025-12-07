@@ -1,70 +1,56 @@
-import { createContext, useState, useEffect } from 'react';
-import React from 'react';
+import { createContext, useState } from "react";
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const CarritoContext = createContext();
 
-// context/CarritoContext.jsx (mejoras)
 export const CarritoProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
 
-  // Persistir carrito en localStorage
-  useEffect(() => {
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-      setCarrito(JSON.parse(carritoGuardado));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-  }, [carrito]);
-
   const agregarProducto = (producto) => {
-    setCarrito(prev => {
-      const existe = prev.find(item => item.id === producto.id);
+    // Si el producto viene de offers, aplicamos el 50% OFF
+    const precioFinal = producto.isOffer
+      ? producto.price * 0.5
+      : producto.price;
+
+    const productoConPrecio = {
+      ...producto,
+      price: precioFinal,
+    };
+
+    setCarrito((prev) => {
+      const existe = prev.find((p) => p.id === producto.id);
       if (existe) {
-        return prev.map(item =>
-          item.id === producto.id
-            ? { ...item, cantidad: item.cantidad + 1 }
-            : item
+        return prev.map((p) =>
+          p.id === producto.id
+            ? { ...p, cantidad: p.cantidad + 1 }
+            : p
         );
+      } else {
+        return [...prev, { ...productoConPrecio, cantidad: 1 }];
       }
-      return [...prev, { ...producto, cantidad: 1 }];
     });
   };
 
-  const modificarCantidad = (id, cambio) => {
-    setCarrito(prev =>
-      prev.map(item =>
-        item.id === id
-          ? { ...item, cantidad: Math.max(0, item.cantidad + cambio) }
-          : item
-      ).filter(item => item.cantidad > 0)
+  const modificarCantidad = (id, cantidad) => {
+    setCarrito((prev) =>
+      prev.map((p) =>
+        p.id === id
+          ? { ...p, cantidad: Math.max(1, p.cantidad + cantidad) }
+          : p
+      )
     );
   };
 
-  // Nuevas funciones
-  const vaciarCarrito = () => {
-    setCarrito([]);
+  const eliminarProducto = (id) => {
+    setCarrito((prev) => prev.filter((p) => p.id !== id));
   };
 
-  const getTotalItems = () => {
-    return carrito.reduce((total, item) => total + item.cantidad, 0);
-  };
-
-  const getTotalPrecio = () => {
-    return carrito.reduce((total, item) => total + (item.price * item.cantidad), 0);
-  };
+  const vaciarCarrito = () => setCarrito([]);
 
   return (
-    <CarritoContext.Provider value={{
-      carrito,
-      agregarProducto,
-      modificarCantidad,
-      eliminarProducto: (id) => modificarCantidad(id, -999), // Eliminar completamente
-      vaciarCarrito,
-      getTotalItems,
-      getTotalPrecio
-    }}>
+    <CarritoContext.Provider
+      value={{ carrito, agregarProducto, modificarCantidad, eliminarProducto, vaciarCarrito }}
+    >
       {children}
     </CarritoContext.Provider>
   );

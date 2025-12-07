@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProductosDestacados from '../components/ProductosDestacados';
 
 const Inicio = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-success text-white py-5">
+      <section className="bg-light-white py-5">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -74,25 +75,22 @@ const Inicio = () => {
         </div>
       </section>
 
-      {/* Productos Destacados - Placeholder */}
+      {/* Productos Destacados */}
       <section className="py-5 bg-light">
-        <div className="container">
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="fw-bold">⭐ Productos Destacados</h2>
-            <Link to="/productos" className="btn btn-outline-success">
-              Ver Todos →
-            </Link>
-          </div>
-          <div className="row">
-            <div className="col-12 text-center py-4">
-              <p className="text-muted">Próximamente: productos destacados</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="container">
+    <div className="d-flex justify-content-between align-items-center mb-4">
+      <h2 className="fw-bold">⭐ Productos Destacados</h2>
+      <Link to="/productos" className="btn btn-outline-success">
+        Ir a productos →
+      </Link>
+    </div>
+    <div className="row">
+      <ProductosDestacados discount={50} />
+    </div>
+  </div>
+</section>
     </div>
   );
 };
 
-// ¡IMPORTANTE! Esta línea debe estar al final
 export default Inicio;

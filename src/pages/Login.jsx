@@ -27,7 +27,7 @@ const Login = () => {
       const credencialesValidas = [
         { email: 'admin@ecomarket.com', contraseña: 'admin123', nombre: 'Administrador' },
         { email: 'supervisor@ecomarket.com', contraseña: 'super123', nombre: 'Supervisor' },
-        { email: 'maria@ecomarket.com', contraseña: 'maria123', nombre: 'María' },
+        { email: 'marco@ecomarket.com', contraseña: 'marco123', nombre: 'Administrador2'},
         { email: 'marco@correo.com', contraseña: 'user123', nombre: 'Usuario Demo' }
       ];
 

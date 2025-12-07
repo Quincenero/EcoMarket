@@ -1,15 +1,15 @@
 import React from 'react';
 import { useContext } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
-import { Link, useNavigate } from 'react-router-dom'; // ← Agregar useNavigate aquí
+import { Link, useNavigate } from 'react-router-dom'; 
 import { SesionContext } from '../context/SesionContext';
 
 const Carrito = () => {
   const { carrito, modificarCantidad, eliminarProducto, vaciarCarrito } = useContext(CarritoContext);
   const { usuario } = useContext(SesionContext);
-  const navigate = useNavigate(); // ← Agregar esta línea
+  const navigate = useNavigate(); 
 
-  const total = carrito.reduce((acc, item) => acc + Number(item.precio)* Number(item.cantidad), 0);
+  const total = carrito.reduce((acc, item) => acc + Number(item.price)* Number(item.cantidad), 0);
 
   return (
     <div className="container mt-4">

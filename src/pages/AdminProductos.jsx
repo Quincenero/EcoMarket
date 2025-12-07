@@ -17,6 +17,7 @@ const AdminProductos = () => {
       const data = await productoService.getProductos();
       setProductos(data);
     } catch (error) {
+      console.error(error);
       showAlert('danger', 'Error al cargar los productos');
     } finally {
       setLoading(false);
@@ -42,6 +43,7 @@ const AdminProductos = () => {
       setShowForm(false);
       showAlert('success', 'Producto creado exitosamente');
     } catch (error) {
+      console.error("Error al crear el producto ", error);
       showAlert('danger', 'Error al crear el producto');
     } finally {
       setLoading(false);
@@ -58,6 +60,7 @@ const AdminProductos = () => {
       setEditingProducto(null);
       showAlert('success', 'Producto actualizado exitosamente');
     } catch (error) {
+      console.error(error);
       showAlert('danger', 'Error al actualizar el producto');
     } finally {
       setLoading(false);
@@ -75,6 +78,7 @@ const AdminProductos = () => {
       await loadProductos();
       showAlert('success', 'Producto eliminado exitosamente');
     } catch (error) {
+      console.error(error);
       showAlert('danger', 'Error al eliminar el producto');
     }
   };

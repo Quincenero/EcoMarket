@@ -21,7 +21,7 @@ const ProductoForm = ({ producto, onSubmit, onCancel, loading }) => {
     'legumbres',
     'lacteos',
     'panaderia',
-    'especiales'
+    'ofertas'
   ];
 
   useEffect(() => {

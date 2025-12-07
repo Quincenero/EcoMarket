@@ -171,7 +171,7 @@ const Productos = () => {
                   }`}
                   onClick={() => filtrarProductos(cat)}
                 >
-                  {cat === 'todos' ? '🏠 Todos' : `📦 ${cat.charAt(0).toUpperCase() + cat.slice(1)}`}
+                  {cat === 'todos' ? '🏠 Todos' : ` ${cat.charAt(0).toUpperCase() + cat.slice(1)}`}
                 </button>
               ))}
             </div>
