@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
 import Nosotros from './pages/Nosotros';
@@ -30,7 +32,7 @@ function App() {
           <Route path="/registro" element={<Registro />} />
           <Route path="/compra-exitosa" element={<CompraExitosa />} />
 
-          {/* Rutas protegidas (usuarios logueados) */}
+          {/* Rutas protegidas */}
           <Route
             path="/carrito"
             element={
@@ -49,7 +51,7 @@ function App() {
             }
           />
 
-          {/* Rutas de administración (solo administradores) */}
+          {/* Rutas de administración */}
           <Route
             path="/admin/productos"
             element={
@@ -61,6 +63,18 @@ function App() {
         </Routes>
       </main>
       <Footer />
+
+      {/* Contenedor de Toastify */}
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
     </div>
   );
 }
