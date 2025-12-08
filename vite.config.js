@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: './',
   plugins: [react({
-    jsxRuntime: 'automatic' // ← React 19 usa esto
+    jsxRuntime: 'automatic' 
   })],
   build: {
     outDir: 'dist'
