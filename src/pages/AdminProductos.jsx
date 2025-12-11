@@ -26,6 +26,7 @@ const AdminProductos = () => {
 
   useEffect(() => {
     loadProductos();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Mostrar alertas
