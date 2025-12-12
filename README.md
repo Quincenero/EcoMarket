@@ -1,8 +1,5 @@
 # 🛒 EcoMarket - Ecommerce Orgánico
 
-![EcoMarket](https://img.shields.io/badge/EcoMarket-Organic%20Store-success)
-![React](https://img.shields.io/badge/React-18.2.0-blue)
-![Vite](https://img.shields.io/badge/Vite-5.0.8-purple)
 
 Una moderna aplicación de ecommerce especializada en productos orgánicos, desarrollada con React y Vite.
 
@@ -16,15 +13,60 @@ Una moderna aplicación de ecommerce especializada en productos orgánicos, desa
 - ⚡ **Single Page Application** con React Router
 - 🌐 **API REST** con MockAPI
 
-## 🚀 Demo
+## 🛠️ Tecnologías utilizadas
+- **Frontend:** React, React Router, Context API, Bootstrap  
+- **Estado global:** Context Providers + LocalStorage sync  
+- **Notificaciones:** Toastify
+- **API:** MockAPI (productos, ofertas, usuarios)  
+- **Herramientas:** Vite
 
-[Ver demo en vivo]() <!-- Agrega tu link de deploy aquí -->
+---
 
-## 📸 Capturas de Pantalla
-
-![Inicio](https://via.placeholder.com/800x400?text=Pantalla+de+Inicio)
-![Productos](https://via.placeholder.com/800x400?text=Catálogo+de+Productos)
-![Carrito](https://via.placeholder.com/800x400?text=Carrito+de+Compras)
+## Estructura del proyecto
+src
+│── App.css
+│── App.jsx
+│── index.css
+│── main.jsx
+│
+├── assets/                  # Recursos estáticos (imágenes, íconos, fuentes)
+│
+├── components/              # Componentes UI reutilizables
+│   │── Footer.jsx
+│   │── Navbar.jsx
+│   │── ProductosDestacados.jsx
+│   │── RutaAdmin.jsx
+│   │── RutaProtegida.jsx
+│   │
+│   └── admin/               # Componentes específicos del panel de administración
+│       │── ProductoForm.jsx
+│       │── ProductoList.jsx
+│
+├── config/                  # Configuración global
+│   │── admins.js
+│
+├── context/                 # Context Providers para estado global
+│   │── CarritoContext.jsx
+│   │── SesionContext.jsx
+│   │── useSesion.jsx
+│
+├── help/                    # Documentación interna o archivos de apoyo
+│   │── estructura.txt
+│
+├── pages/                   # Vistas principales de la aplicación
+│   │── AdminProductos.jsx
+│   │── Carrito.jsx
+│   │── Checkout.jsx
+│   │── CompraExitosa.jsx
+│   │── Contacto.jsx
+│   │── Inicio.jsx
+│   │── Login.jsx
+│   │── Nosotros.jsx
+│   │── Productos.jsx
+│   │── Registro.jsx
+│
+└── services/                # Lógica de conexión con la API
+    │── productoService.js
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -38,5 +80,5 @@ Una moderna aplicación de ecommerce especializada en productos orgánicos, desa
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/ecomarket.git
+   git clone https://github.com/quincenero/ecomarket.git
    cd ecomarket
